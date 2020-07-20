@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 // const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
+const colors = require("colors");
 const connectDB = require("./config/db");
 const PORT = process.env.PORT || 3001;
 
@@ -37,6 +38,7 @@ app.use(routes);
 const server = app.listen(PORT, () =>
   console.log(
     `🌎  ==> API Server running in ${process.env.NODE_ENV} mode on PORT ${PORT}!`
+      .yellow.bold
   )
 );
 
